@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Lesson2 : MonoBehaviour
 {
+    public GameObject testObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,11 @@ public class Lesson2 : MonoBehaviour
 
         //通过泛型获取
         t = this.GetComponent<Lesson2_Test>();
+
+        t.enabled = false;
+
+        Lesson2_Test test = testObject.GetComponent<Lesson2_Test>();
+        test.enabled = false;
     }
 
     // Update is called once per frame
