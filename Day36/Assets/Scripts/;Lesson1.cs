@@ -9,8 +9,6 @@ public enum MyEnum
     boss
 }
 
-
-
 public class Lesson1 : MonoBehaviour
 {
     [SerializeField]//使private和protected可以显示
@@ -29,9 +27,7 @@ public class Lesson1 : MonoBehaviour
     public MyEnum type;
     public GameObject gameobj;
 
-
-
-    ["战斗属性"]
+    [Header("战斗属性")]
     public int atk;
 
     [Range(0 , 10)]
@@ -44,9 +40,20 @@ public class Lesson1 : MonoBehaviour
         money = 99;
     }
 
+    public MyPlayerData playerData;
+
     private void Start() 
     {
         print(privateInt);
         print(protectedStr);
     }
+
+}
+
+[System.Serializable]
+public class MyPlayerData
+{
+    public int hp;
+    public int atk;
+    public string name;
 }
