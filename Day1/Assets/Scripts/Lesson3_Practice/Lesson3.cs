@@ -31,11 +31,13 @@ public class Lesson3 : MonoBehaviour
 
         GameObject.Destroy(obj3 , 5);//删除一个对象,后面的参数是延迟()秒删除
 
-        GameObject.Destroy(this);//还可以删除脚本对象
+        //GameObject.Destroy(this);还可以删除脚本对象
 
         //GameObject.DestroyImmediate()可以立即删除对象,普通的Destroy只是在下一帧移除
 
         GameObject.DontDestroyOnLoad(this.gameObject);//自己依附的GameObject对象,过场景不被删除
+
+
     }
 
     // Update is called once per frame
