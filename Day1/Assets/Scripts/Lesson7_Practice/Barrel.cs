@@ -14,7 +14,7 @@ public class Barrel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float angle = Mathf.Sin(Time.time) * 0.05f;
+        float angle = Mathf.Sin(Time.time) * 0.01f;
         transform.RotateAround(turret.position, turret.right, angle);
     }
 }
