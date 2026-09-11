@@ -21,9 +21,9 @@ public static class Toll
 {
     public static void NameSort(this Transform t)
     {
-        for (int i = 0; i < t.childCount; i++)
+        for (int i = 0; i < t.childCount - 1; i++)
         {
-            for (int j = 0; j + 1 < t.childCount; j++)
+            for (int j = 0; j < t.childCount - i - 1; j++)
             {
                 if(t.GetChild(j).name.Length > t.GetChild(j + 1).name.Length)
                     t.GetChild(j).SetSiblingIndex(j + 1);//因为GetChild的思路类似于插入,所以不用考虑j和j+1之间的先后
@@ -33,7 +33,9 @@ public static class Toll
 
     public static void FindPro(this Transform t, string gameObjectName)
     {
-        Debug.Log("子类中的" + t.Find(gameObjectName).name);
+        if (t.Find(gameObjectName).name != null)
+            Debug.Log("子类中的" + t.Find(gameObjectName).name);
+
         for (int i = 0; i < t.childCount; i++)
         {
             if (t.GetChild(i).Find(gameObjectName) != null)
