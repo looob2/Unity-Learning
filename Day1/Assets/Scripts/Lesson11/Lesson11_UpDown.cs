@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class Lesson11_Scroll : MonoBehaviour
+public class Lesson11_UpDown : MonoBehaviour
 {
+    public Transform turret;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +14,6 @@ public class Lesson11_Scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(new Vector3(0, Input.GetAxis("Mouse X"), 0) * 3);
+        transform.RotateAround(turret.position, Vector3.right, Input.mouseScrollDelta.y * 360 * Time.deltaTime);
     }
 }

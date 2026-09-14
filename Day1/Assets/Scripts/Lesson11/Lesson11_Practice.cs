@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class Lesson11_Practice : MonoBehaviour
 {
+    private float Direction = 1;
     void Move()
     {
         if (Input.GetKey(KeyCode.W))
-            transform.position += transform.forward * 1 * Time.deltaTime;
+        {
+            Direction = 1;
+            transform.position += transform.forward * 2.5f * Time.deltaTime;
+        }
         if (Input.GetKey(KeyCode.S))
-            transform.position += transform.forward * -1 * Time.deltaTime;
+        {
+            transform.position += transform.forward * -2.5f * Time.deltaTime;
+            Direction = -1;
+        }           
         if (Input.GetKey(KeyCode.A))
-            transform.Rotate(new Vector3(0, 1, 0) * -0.1f);
+            transform.Rotate(transform.up * -30 * Direction * Time.deltaTime);
         if (Input.GetKey(KeyCode.D))
-            transform.Rotate(new Vector3(0, 1, 0) * 0.1f);
+            transform.Rotate(transform.up * 30 * Direction * Time.deltaTime);
     }
     // Start is called before the first frame update
     void Start()
