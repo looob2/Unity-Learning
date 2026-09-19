@@ -7,16 +7,15 @@ public class Lesson14_Move : MonoBehaviour
     private void Move()
     {
         if (Input.GetKey(KeyCode.W))
-            transform.position += transform.forward * Time.deltaTime;
+            transform.position += t.forward * 2 * Time.deltaTime;
         if (Input.GetKey(KeyCode.S))
-            transform.position += transform.forward * -1 * Time.deltaTime;
+            transform.position += t.forward * -2 * Time.deltaTime;
         if (Input.GetKey(KeyCode.D))
-            transform.position += transform.right * Time.deltaTime;
+            transform.position += t.right * 2 * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
-            transform.position += transform.right * -1 * Time.deltaTime;
-        if (Input.GetKeyUp(KeyCode.Space))
-            transform.position += Vector3.up * 200 * Time.deltaTime;
+            transform.position += t.right * -2 * Time.deltaTime;
     }
+    public Transform t;
     // Start is called before the first frame update
     void Start()
     {

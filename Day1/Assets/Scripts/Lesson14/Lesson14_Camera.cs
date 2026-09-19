@@ -8,8 +8,9 @@ public class Lesson14_Camera : MonoBehaviour
     private void Watch()
     {
         transform.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X") * 1);
-        transform.RotateAround(transform.position, Vector3.right, Input.GetAxis("Mouse Y") * -1);
+        transform.RotateAround(transform.position, transform.right, Input.GetAxis("Mouse Y") * -1);
     }
+    public Transform capsule;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +21,10 @@ public class Lesson14_Camera : MonoBehaviour
     void Update()
     {
         Watch();
+        transform.position = new Vector3(capsule.transform.position.x, capsule.transform.position.y + 0.8f, capsule.transform.position.z);
+        if (Input.GetMouseButtonUp(0)) 
+        { 
+
+        }
     }
 }
