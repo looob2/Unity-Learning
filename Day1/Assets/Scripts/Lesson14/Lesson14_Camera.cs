@@ -5,12 +5,7 @@ using UnityEngine;
 
 public class Lesson14_Camera : MonoBehaviour
 {
-    private void Watch()
-    {
-        transform.RotateAround(transform.position, Vector3.up, Input.GetAxis("Mouse X") * 1);
-        transform.RotateAround(transform.position, transform.right, Input.GetAxis("Mouse Y") * -1);
-    }
-    public Transform capsule;
+    private float xRotation;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +15,16 @@ public class Lesson14_Camera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Watch();
-        transform.position = new Vector3(capsule.transform.position.x, capsule.transform.position.y + 0.8f, capsule.transform.position.z);
+        xRotation -= Input.GetAxis("Mouse Y") * 2;
+        
+        transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
+
         if (Input.GetMouseButtonUp(0)) 
         { 
-
+            GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            Vector3 v = Input.mousePosition;
+            v.z = 2;
+            obj.transform.position = Camera.main.ScreenToWorldPoint(v);
         }
     }
 }

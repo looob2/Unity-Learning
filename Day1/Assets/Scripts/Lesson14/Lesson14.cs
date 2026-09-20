@@ -61,6 +61,6 @@ public class Lesson14 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.eulerAngles = new Vector3(0, Camera.main.transform.eulerAngles.y, 0);
+        transform.Rotate(transform.up * Input.GetAxis("Mouse X") * 2);
     }
 }
