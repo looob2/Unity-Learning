@@ -16,15 +16,7 @@ public class Lesson14_Camera : MonoBehaviour
     void Update()
     {
         xRotation -= Input.GetAxis("Mouse Y") * 2;
-        
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-
-        if (Input.GetMouseButtonUp(0)) 
-        { 
-            GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            Vector3 v = Input.mousePosition;
-            v.z = 2;
-            obj.transform.position = Camera.main.ScreenToWorldPoint(v);
-        }
     }
 }

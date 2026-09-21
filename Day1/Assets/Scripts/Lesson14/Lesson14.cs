@@ -52,6 +52,8 @@ public class Lesson14 : MonoBehaviour
     //    print(name + "¼ì²âµ½" + other.gameObject.name + "ÔÚÖØµþ");
     //}
 
+    private float yRotation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +63,7 @@ public class Lesson14 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(transform.up * Input.GetAxis("Mouse X") * 2);
+        yRotation += Input.GetAxis("Mouse X") * 2;
+        transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }
