@@ -405,13 +405,13 @@ MonoBehaviour:
     width: 100
     height: 50
   btnContent:
-    m_Text: 
+    m_Text: "\u5F00\u59CB\u6E38\u620F"
     m_Image: {fileID: 0}
     m_Tooltip: 
   btnStyle:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 10904, guid: 0000000000000000f000000000000000, type: 0}
+      m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
@@ -419,7 +419,7 @@ MonoBehaviour:
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
-      m_Background: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+      m_Background: {fileID: 0}
       m_ScaledBackgrounds: []
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Focused:
